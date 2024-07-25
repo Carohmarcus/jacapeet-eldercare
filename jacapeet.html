@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elderly Feeding Program Website</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Add CSS styles */
+    .selected {
+      background-color: #f0f0f0;
+      font-weight: bold;
+    }
+    .get-involved-content {
+      display: none;
+    }
+
+
+    
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar-left">
+      <a href="#" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+      <a href="#get-involved">Get Involved</a>
+    </div>
+    <div class="navbar-right">
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+      <a href="donate.html">Donate</a>
+    </div>
+  </div>
+
+  <div class="landing-page">
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Eldercare Program</h1>
+        <p>Providing nutritious meals and care for senior citizens in our community.</p>
+        <a href="#services" class="btn">Explore Our Services</a>
+      </div>
+      
+        <div class="image-container">
+          <img src="images.jpg">
+
+
+      </div>
+    </section>
+
+    <section id="home" class="home">
+      <div class="home-content">
+        <h2>Our Mission</h2>
+        <p>At the Elderly Feeding Program, our mission is to ensure that every senior citizen aged 75 in kitui central and Kilungu,Makueni county have access to nutritious meals and comprehensive care. We believe that good nutrition and home care packages is essential for maintaining the health and well-being of our elderly population.</p>
+        <p>Through our meal delivery service, community meals, and personalized nutrition advice and care packages we strive to improve the quality of life for seniors and help them live independently for as long as possible.</p>
+      </div>
+    </section>
+
+    <section id="about" class="about-us">
+      <div class="about-content">
+        <h2>About Us</h2>
+        <p>We are a non-profit organization dedicated to improving the lives of elderly individuals in our community. Our mission is to provide comprehensive care and support to seniors, ensuring they have access to nutritious meals, and personalized nutrition advice.</p>
+        <p>Our team of passionate volunteers and experienced professionals work tirelessly to deliver meals directly to the homes of seniors who may have difficulty preparing their own food. We also organize community meals, where seniors can come together, enjoy a shared meal, and engage in social interaction.</p>
+        <a href="#contact" class="btn">Contact Us</a>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <h2>Our Services</h2>
+      <div class="services-container">
+        <div class="service-item">
+          <h3>Meal Delivery</h3>
+          <p>We deliver freshly prepared meals to the homes of elderly individuals who need assistance.</p>
+        </div>
+        <div class="service-item">
+          <h3>Community Meals</h3>
+          <p>Join us for communal meals where seniors can enjoy socializing and nutritious food together.</p>
+        </div>
+        <div class="service-item">
+          <h3>Nutrition Advice</h3>
+          <p>Our experts provide dietary guidance tailored to the nutritional needs of seniors.</p>
+        </div>
+        <div class="service-item">
+          <h3>Care Package</h3>
+          <p>We provide care packages including medication, diapers, and clutches.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="contact-content">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or would like to volunteer, please reach out to us.</p>
+        <a href="contact.html" class="btn">Get in Touch</a>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+    <section id="get-involved" class="get-involved">
+      <div class="get-involved-content">
+        <h2>Get Involved</h2>
+        <ul id="involvement-list">
+          <select id="involvement-list" name="Get Involved" required>
+            <option value="volunteer"></option>
+            <option value="attend"></option>
+          </select>
+          <li><a href="volunteer.html" onclick="selectItem(this)">Volunteer</a></li>
+          <li><a href="attend.html" onclick="selectItem(this)">Attend Events</a></li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Jacapeet. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Add event listeners to the navigation links
+    const navLinks = document.querySelectorAll('.navbar-left a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(event) {
+        // Remove active class from all links
+        navLinks.forEach(l => l.classList.remove('active'));
+        // Add active class to the clicked link
+        this.classList.add('active');
+
+        // Show the Get Involved section when clicked
+        if (this.getAttribute('href') === '#get-involved') {
+          document.querySelector('.get-involved-content').style.display = 'block';
+        } else {
+          document.querySelector('.get-involved-content').style.display = 'none';
+        }
+      });
+    });
+
+    // Function to select one item at a time
+    function selectItem(element) {
+      const items = document.querySelectorAll('#involvement-list li a');
+      items.forEach(item => item.classList.remove('selected'));
+      element.classList.add('selected');
+    }
+
+    // Hide the Get Involved section initially
+    document.querySelector('.get-involved-content').style.display = 'none';
+
+
+
+
+    
+  </script>
+
+
+
+
+
+</body>
+</html>

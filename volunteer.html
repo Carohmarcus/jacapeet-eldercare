@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volunteer - Elderly Feeding Program</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(45deg, #6ab04c, #badc58);
+      color: #fff;
+      padding: 1em 0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    header nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    header nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    header nav a:hover {
+      background-color: #45a049; /* Darker shade for hover effect */
+    }
+
+    header nav a.active {
+      font-weight: bold;
+      background-color: #45a049;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    footer {
+      background: #4CAF50;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Form Styles */
+    .form-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      background: linear-gradient(135deg, #f6f9fc, #eef2f3);
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #4CAF50;
+    }
+
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: #4CAF50;
+      outline: none;
+      box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+    }
+
+    .form-group button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s;
+    }
+
+    .form-group button:hover {
+      background-color: #45a049;
+      transform: translateY(-2px);
+    }
+
+    .form-group button:active {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+ 
+
+  <main>
+    <section class="volunteer">
+      <div class="form-container">
+        <h1>Volunteer with Us</h1>
+        <p>Join our team of dedicated volunteers and make a difference in the lives of senior citizens in our community. Please fill out the form below to apply as a volunteer.</p>
+        
+        <form >
+          <div class="form-group">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first_name" required>
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last_name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+          <div class="form-group">
+            <label for="availability">Availability</label>
+            <select id="availability" name="availability" required>
+              <option value="weekdays">Weekdays</option>
+              <option value="weekends">Weekends</option>
+              <option value="both">Both</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="interests">Interests</label>
+            <textarea id="interests" name="interests" rows="4" placeholder="Please describe your interests and any relevant skills." required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="why-volunteer">Why do you want to volunteer with us?</label>
+            <textarea id="why-volunteer" name="why_volunteer" rows="4" placeholder="Tell us why you're interested in volunteering with the Elderly Feeding Program." required></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit">Submit Application</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Elderly Feeding Program. All rights reserved.</p>
+  </footer>
+</body>
+</html>

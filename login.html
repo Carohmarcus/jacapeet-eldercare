@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #form-message {
+            margin-top: 15px;
+        }
+        .registration-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Elderly Feeding Program</h1>
+        <h2>Login</h2>
+        <form id="login-form">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <div class="form-group">
+                <label for="role">Role:</label>
+                <select id="role" name="role" required>
+                    <option value="">Select a role</option>
+                    <option value="donor">Donor</option>
+                    <option value="caregiver">Caregiver</option>
+                </select>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <div id="form-message"></div>
+        <div class="registration-link">
+            <p>Don't have an account? <a href="Register.html">Register here</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Simulated function to get registered users from a database or local storage
+        function getRegisteredUsers() {
+            return [
+                { username: 'donor1', password: 'password1', role: 'donor' },
+                { username: 'caregiver1', password: 'password2', role: 'caregiver' },
+              
+              
+              
+              
+                { username: 'donor1', password: 'password1', role: 'donor' },
+                { username: 'caregiver1', password: 'password2', role: 'caregiver' },
+                { username: 'donor2', password: 'password3', role: 'donor' },
+                { username: 'caregiver2', password: 'password4', role: 'caregiver' },
+                { username: 'donor3', password: 'password5', role: 'donor' },
+                { username: 'donor4', password: 'password6', role: 'donor' },
+                { username: 'caregiver3', password: 'password7', role: 'caregiver' },
+                { username: 'caregiver4', password: 'password8', role: 'caregiver' }
+                { username: 'donor5', password: 'password9', role: 'donor' },
+                { username: 'donor6', password: 'password10', role: 'donor' },
+                { username: 'caregiver5', password: 'password11', role: 'caregiver' },
+                { username: 'caregiver6', password: 'password12', role: 'caregiver' },
+                { username: 'donor7', password: 'password13', role: 'donor' },
+                { username: 'donor8', password: 'password14', role: 'donor' },
+                { username: 'caregiver7', password: 'password15', role: 'caregiver' },
+                { username: 'caregiver8', password: 'password16', role: 'caregiver' }
+              
+            
+              
+                
+            ];
+        }
+
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get the username, password, and role values
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var role = document.getElementById('role').value;
+
+            // Retrieve the registered users
+            var registeredUsers = getRegisteredUsers();
+
+            // Check if the user is registered
+            var isRegistered = registeredUsers.some(function(user) {
+                return user.username === username && user.password === password && user.role === role;
+            });
+
+            if (isRegistered) {
+                // Login successful, redirect to the appropriate page
+                if (role === 'donor') {
+                    window.location.href = 'donate.html';
+                } else if (role === 'caregiver') {
+                    window.location.href = 'caregiver.html';
+                }
+            } else {
+                // Login failed, display an error message
+                var formMessage = document.getElementById('form-message');
+                formMessage.innerText = 'Invalid username, password, or role.';
+                formMessage.style.color = 'red';
+            }
+        });
+    </script>
+</body>
+</html>
